@@ -1,3 +1,7 @@
-h3, p, legend{
+p, legend{
     font-family: 'Poppins', sans-serif;
+}
+
+h3 {
+  font-family: Arial, Helvetica, Arial, sans-serif;
 }
