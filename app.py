@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request
 from sklearn.feature_extraction.text import CountVectorizer
-from sklearn.externals import joblib
+import joblib
 import numpy as np
 import pandas as pd
 import pickle
@@ -18,8 +18,8 @@ def index():
     vect = CountVectorizer(decode_error="replace", vocabulary=pickle.load(open(feature_path, "rb")))
     cleanData = pd.read_pickle('cleanData.pkl')
 
-    dt = joblib.load('finalized_model_decTree_Ctgry.sav')
-    dt2 = joblib.load('finalized_model_decTree_Assgn.sav')
+    dt = joblib.load('finalized_model_decTree_Ctgry2.sav')
+    dt2 = joblib.load('finalized_model_decTree_Assgn2.sav')
 
     # Input
     sampleString = request.form['desc']
