@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/index.css') }}">
+    <meta charset="UTF-8">
+    <title>IT Ticket Request Classifier</title>
+</head>
+<body>
+
+<form method="POST" action="{{url_for('index')}}">
+    <fieldset>
+        <legend>IT Ticket Request Classifier</legend>
+        <p>
+            <label> Employee ID:
+                <input type="text" name="emp_id" required>
+            </label>
+        </p>
+        <p> Ticket Request Description: </p>
+            <textarea name="desc" cols="80" rows="10" required></textarea>
+
+        <br><input type='submit' name="Submit">
+    </fieldset>
+</form>
+{% if category  %}
+<h3>Results</h3>
+Category: {{ category }} <br>
+Assigned to: {{ assignee }}
+{%endif%}
+
+</body>
+</html>
